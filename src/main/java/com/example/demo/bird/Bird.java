@@ -1,6 +1,26 @@
 package com.example.demo.bird;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Bird {
+    @Id
+    @SequenceGenerator(
+        name = "bird_sequence",
+        sequenceName = "bird_sequence",
+        allocationSize = 1
+    )
+    @GeneratedValue(
+        strategy = GenerationType.SEQUENCE,
+        generator = "bird_sequence"
+    )
+
     private Long id;
     private String name;
     private String family;

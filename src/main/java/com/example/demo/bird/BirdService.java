@@ -18,5 +18,9 @@ public class BirdService {
     public List<Bird> getBirds() {
         return birdRepository.findAll();
     }
+    
+    public void addNewBird(Bird bird) {
+        System.out.println(bird);    
+    }
 }
 
